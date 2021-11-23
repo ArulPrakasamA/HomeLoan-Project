@@ -1,0 +1,66 @@
+﻿@model IEnumerable<EfcoreLayout.Models.IncomeDetail>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/CutomerLayout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TypeOfEmployment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrganizationType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrganizationName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Salary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RetirementAge)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Application)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TypeOfEmployment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrganizationType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrganizationName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Salary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RetirementAge)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Application.ApplicationId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IncomeId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IncomeId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IncomeId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

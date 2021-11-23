@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewData["Title"] = "Approval";
+    Layout = "~/Views/Admin/AdminLayout.cshtml";
+}
+@model List<int?>
+
+    <style>
+
+        .col-md-3 a {
+            background-color: ghostwhite;
+        }
+
+            .col-md-3 a:hover {
+                background-color: mediumseagreen;
+            }
+    </style>
+
+
+    <center><h1>Approval</h1></center>
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-3">
+                    <div>
+                        <label class="control-label">Application ID:@item</label>
+                        <a asp-controller="admin" asp-action="Approveonclick" asp-route-id="@item" class="btn btn-success">Click to Approve</a>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>

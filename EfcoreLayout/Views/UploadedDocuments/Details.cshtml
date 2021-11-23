@@ -1,0 +1,41 @@
+﻿@model EfcoreLayout.Models.UploadedDocument
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/CutomerLayout.cshtml";
+}
+
+<h1>Uploaded Documents</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DocumentverifiedStatus)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DocumentverifiedStatus)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LoanApprovalStatus)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.LoanApprovalStatus)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Application)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Application.ApplicationId)
+        </dd>
+    </dl>
+</div>
+<br />  
+<p style="color:Red">
+    *Please Check the Details You Have Filled before Submitting
+</p>
+
+<div>
+    <a asp-controller="home" asp-action="index" class="btn btn-success">SUBMIT</a>
+
+</div>

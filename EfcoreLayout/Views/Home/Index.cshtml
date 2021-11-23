@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <br />
+    <h1 class="display-4" style=" color:floralwhite">Welcome To Home Loan Site</h1><br />
+    
+        <div class="container">
+            <img src="~/Home.jpeg"  width="700" height="390"/>
+
+            <br/><br />
+            <center>
+                <a asp-controller="userdetails" asp-action="create" class="btn btn-success"> Apply For a Loan</a>
+
+                <a asp-controller="Home" asp-action="EMI" class="btn btn-success">EMI Calculator</a>
+
+                <a asp-controller="Home" asp-action="eligiblity" class="btn btn-success">Loan Eligiblity</a>
+            </center>
+        </div>
+    
+</div>

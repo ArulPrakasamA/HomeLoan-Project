@@ -1,0 +1,81 @@
+﻿@model EfcoreLayout.Models.UserDetail 
+@{
+    ViewData["Title"] = "Verifyonclick";
+    Layout = "~/Views/Admin/AdminLayout.cshtml";
+}
+
+
+
+<h1>Document Verification</h1>
+
+<p>Customer Details</p>
+
+<dl class="row">
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.FirstName)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.FirstName)
+    </dd>
+
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.LastName)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.LastName)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.PhoneNumber)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.PhoneNumber)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.DateOfBirth)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.DateOfBirth)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Gender)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Gender)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Nationality)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Nationality)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.AadharNumber)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.AadharNumber)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.PanNumber)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.PanNumber)
+    </dd>
+</dl>
+
+@foreach (var item in ViewBag.Userfiles)
+{
+    <img src="@Url.Content(item.PanCard)" height="300" width="300" />
+    <img src="@Url.Content(item.AadharCard)" height="300" width="300" />
+    <img src="@Url.Content(item.SalarySlip)" height="300" width="300" />
+    <img src="@Url.Content(item.Loa)" height="300" width="300" />
+    <img src="@Url.Content(item.Noc)" height="300" width="300" />
+    <img src="@Url.Content(item.Agreement)" height="300" width="300" />
+}
+<br>
+<br />
+<form asp-action="Verifyonclick">
+    <center>
+        <input name="button" type="submit" value="Verify" class="btn btn-success" />
+        <input name="button" type="submit" value="Reject" class="btn btn-success" />
+    </center>
+</form>

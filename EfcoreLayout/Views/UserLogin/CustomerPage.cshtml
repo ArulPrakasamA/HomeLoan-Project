@@ -1,0 +1,17 @@
+﻿@model EfcoreLayout.Models.UserDetail
+@{
+    ViewData["Title"] = "CustomerPage";
+    Layout = "~/Views/UserLogin/WelcomeLayout.cshtml";
+
+}
+
+<center>
+
+    <h1>Welcome To Customer Dashboard, @Model.FirstName @Model.LastName</h1>
+
+</center>
+
+<br />
+<br />
+<h3>Account Balance:@ViewBag.Balance</h3>
+

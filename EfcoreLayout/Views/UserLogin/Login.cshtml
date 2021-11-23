@@ -1,0 +1,41 @@
+﻿@model EfcoreLayout.Models.UserDetail
+
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/BankingMaster.cshtml";
+}
+
+<center><h1>User Login</h1></center>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Login">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" autocomplete="off"/>
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserPassword" class="control-label"></label>
+                <input type="password" asp-for="UserPassword" class="form-control" />
+                <span asp-validation-for="UserPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Login" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div style="color:red">
+    @ViewBag.Error <br />
+</div>
+
+<div>
+    <a asp-controller="userdetails" asp-action="Create">New User ? Apply for a Loan Now</a>
+</div>
+

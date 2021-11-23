@@ -1,0 +1,54 @@
+﻿@model EfcoreLayout.Models.IncomeDetail
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/CutomerLayout.cshtml";
+}
+
+<h1>Income Details</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IncomeId"  disabled />
+            <div class="form-group">
+                <label asp-for="TypeOfEmployment" class="control-label"></label><br />
+                <input type="radio" id="salaried" asp-for="TypeOfEmployment" value="Salaried" />
+                <label for="salaried">Salaried</label>
+                <input type="radio" id="selfemployed" asp-for="TypeOfEmployment" value="Self Employed" />
+                <label for="selfemployed">Self Employed</label>
+                <span asp-validation-for="TypeOfEmployment" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OrganizationType" class="control-label"></label><br />
+                <input type="radio" id="public" asp-for="OrganizationType" value="Public" />
+                <label for="public">Public</label>
+                <input type="radio" id="private" asp-for="OrganizationType" value="Private" />
+                <label for="private">Private</label>
+                <span asp-validation-for="OrganizationType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OrganizationName" class="control-label"></label>
+                <input asp-for="OrganizationName" class="form-control" />
+                <span asp-validation-for="OrganizationName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Salary" class="control-label"></label>
+                <input asp-for="Salary" class="form-control" />
+                <span asp-validation-for="Salary" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RetirementAge" class="control-label"></label>
+                <input asp-for="RetirementAge" class="form-control" />
+                <span asp-validation-for="RetirementAge" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+

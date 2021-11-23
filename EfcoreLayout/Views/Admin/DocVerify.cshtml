@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Admin-Verification";
+    Layout = "~/Views/Admin/AdminLayout.cshtml";
+}
+
+@model  List<int?>
+
+<style>
+
+    .col-md-3 a{
+        background-color: ghostwhite;
+    }
+        .col-md-3 a:hover {
+            background-color: mediumseagreen;
+        }
+</style>
+<h1>
+    Document Verification
+</h1>
+<div class="container">
+    <div class="row">
+        
+        @foreach (var item in Model)
+        {
+            <div class="col-md-3">
+                <div>
+                    <label class="control-label">Application ID:@item</label>
+                    <a  asp-controller="admin" asp-action="verifyonclick" asp-route-id="@item" class="btn ">Click to Verify</a>
+                </div>
+            </div>
+        }
+    </div>
+    </div>

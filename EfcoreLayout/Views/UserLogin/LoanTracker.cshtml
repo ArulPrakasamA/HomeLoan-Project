@@ -1,0 +1,30 @@
+﻿@model EfcoreLayout.Models.LoanStatus
+
+@{
+    ViewData["Title"] = "LoanTracker";
+    Layout = "~/Views/UserLogin/WelcomeLayout.cshtml";
+}
+
+<center><h1>LoanTracker</h1></center>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="LoanTracker">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ApplicationId" class="control-label"></label>
+                <input type="number" asp-for="ApplicationId" class="form-control">
+            </div>
+            <div class="form-group">
+                <label asp-for="TrackStatus" class="control-label"></label>
+                <input asp-for="TrackStatus" class="form-control" value="@ViewBag.Tracker" disabled/>
+                <span asp-validation-for="TrackStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Track" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+

@@ -1,0 +1,56 @@
+﻿@model EfcoreLayout.Models.Property
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/CutomerLayout.cshtml";
+}
+
+<h1>Property Details</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @*<div class="form-group">
+                <label asp-for="PropertyId" class="control-label"></label>
+                <input asp-for="PropertyId" class="form-control" value="@ViewBag.PropertyID" disabled/>
+                <span asp-validation-for="PropertyId" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <label asp-for="PropertyNumber" class="control-label"></label>
+                <input asp-for="PropertyNumber" class="form-control" />
+                <span asp-validation-for="PropertyNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PropertyArea" class="control-label"></label>
+                <input asp-for="PropertyArea" class="form-control" />
+                <span asp-validation-for="PropertyArea" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pincode" class="control-label"></label>
+                <input asp-for="Pincode" class="form-control" />
+                <span asp-validation-for="Pincode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TypeOfProperty" class="control-label"></label>
+                <input asp-for="TypeOfProperty" class="form-control" />
+                <span asp-validation-for="TypeOfProperty" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EstimatedCost" class="control-label"></label>
+                <input asp-for="EstimatedCost" class="form-control" />
+                <span asp-validation-for="EstimatedCost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ApplicationId" class="control-label"></label>
+                <input asp-for="ApplicationId" class="form-control" value="@ViewBag.ApplicationId" disabled>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Next" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+

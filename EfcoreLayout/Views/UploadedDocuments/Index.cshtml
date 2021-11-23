@@ -1,0 +1,48 @@
+﻿@model IEnumerable<EfcoreLayout.Models.UploadedDocument>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/CutomerLayout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DocumentverifiedStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LoanApprovalStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Application)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DocumentverifiedStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LoanApprovalStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Application.ApplicationId)
+            </td>
+
+        </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-controller="home" asp-action="index" class="btn btn-success">SUBMIT</a>
+
